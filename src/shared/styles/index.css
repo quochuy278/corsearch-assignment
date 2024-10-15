@@ -1,0 +1,27 @@
+/**
+ * @file index.css
+ * @description This file contains global styles and CSS variables that can be used across the entire application.
+ * Import this file in your main App component or index.js to apply these styles globally.
+ * 
+ * Example usage in a component:
+ * import '@/shared/styles/index.css';
+ */
+
+ :root {
+    /* Define your global CSS variables here */
+    --primary-color: #007bff;
+    --secondary-color: #6c757d;
+    --font-family: 'Arial', sans-serif;
+  }
+  
+  /* Add any global styles below */
+  body {
+    font-family: var(--font-family);
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  /* You can also import other CSS files here if needed */
+  /* @import 'reset.css'; */
+  /* @import 'typography.css'; */
