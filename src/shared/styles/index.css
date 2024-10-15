@@ -8,20 +8,88 @@
  */
 
  :root {
-    /* Define your global CSS variables here */
-    --primary-color: #007bff;
-    --secondary-color: #6c757d;
-    --font-family: 'Arial', sans-serif;
+    /* Color variables */
+    --color-primary: #1976d2;
+    --color-primary-light: #42a5f5;
+    --color-primary-dark: #0d47a1;
+    --color-secondary: #9c27b0;
+    --color-secondary-light: #ba68c8;
+    --color-secondary-dark: #7b1fa2;
+    --color-error: #d32f2f;
+    --color-warning: #ffa000;
+    --color-info: #1976d2;
+    --color-success: #388e3c;
+    --color-background: #ffffff;
+    --color-surface: #f5f5f5;
+    --color-text-primary: rgba(0, 0, 0, 0.87);
+    --color-text-secondary: rgba(0, 0, 0, 0.6);
+    --color-text-disabled: rgba(0, 0, 0, 0.38);
+  
+    /* Font variables */
+    --font-family-primary: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    --font-size-small: 0.875rem;
+    --font-size-medium: 1rem;
+    --font-size-large: 1.25rem;
+    --font-weight-regular: 400;
+    --font-weight-medium: 500;
+    --font-weight-bold: 700;
+  
+    /* Apply base styles */
+    font-family: var(--font-family-primary);
+    line-height: 1.5;
+    font-weight: var(--font-weight-regular);
+  
+    color-scheme: light dark;
+    color: var(--color-text-primary);
+    background-color: var(--color-background);
+  
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
   }
   
-  /* Add any global styles below */
+  a {
+    font-weight: var(--font-weight-medium);
+    color: var(--color-primary);
+    text-decoration: inherit;
+  }
+  a:hover {
+    color: var(--color-primary-dark);
+  }
+  
   body {
-    font-family: var(--font-family);
     margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+    display: flex;
+    place-items: center;
+    min-width: 320px;
+    min-height: 100vh;
   }
   
-  /* You can also import other CSS files here if needed */
-  /* @import 'reset.css'; */
-  /* @import 'typography.css'; */
+  h1 {
+    font-size: var(--font-size-large);
+    line-height: 1.1;
+    font-weight: var(--font-weight-bold);
+  }
+  
+  button {
+    border-radius: 4px;
+    border: 1px solid transparent;
+    padding: 0.6em 1.2em;
+    font-size: var(--font-size-medium);
+    font-weight: var(--font-weight-medium);
+    font-family: inherit;
+    background-color: var(--color-primary);
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.25s;
+  }
+  button:hover {
+    background-color: var(--color-primary-dark);
+  }
+  button:focus,
+  button:focus-visible {
+    outline: 2px solid var(--color-primary);
+    outline-offset: 2px;
+  }
+  
