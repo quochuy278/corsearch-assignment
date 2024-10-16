@@ -1,24 +1,16 @@
 import React from "react";
-import { Outlet, Link } from "react-router-dom";
+import { Outlet } from "react-router-dom";
 import "./App.scss";
-import Container from "./shared/components/Container";
+import { Header } from "./shared/components";
 
 const App: React.FC = () => {
   return (
-    <Container>
-      <div className="wrapper">
-        <h1>Corsearch Assignment</h1>
-        <nav className="nav">
-          <ul>
-            <li className="btn">
-              <Link to="/users">Go to user page</Link>
-            </li>
-          </ul>
-        </nav>
-
+    <div className="app-wrapper">
+      <Header />
+      <main className="main-content">
         <Outlet />
-      </div>
-    </Container>
+      </main>
+    </div>
   );
 };
 

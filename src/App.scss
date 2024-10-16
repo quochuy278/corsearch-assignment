@@ -1,23 +1,12 @@
-.wrapper {
-  padding: 2rem;
-  width: fit-content;
+.app-wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  width: 100vw;
 }
 
-.nav {
-  margin-top: 5rem;
-}
-
-.btn {
-  padding: 0.5rem;
-
-  margin-bottom: 1rem;
-  background-color: var(--color-primary);
-  border-radius: 4rem;
-
-  a {
-    display: grid;
-    place-items: center;
-    width: 100%;
-    color: var(--color-surface);
-  }
+.main-content {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
 }
