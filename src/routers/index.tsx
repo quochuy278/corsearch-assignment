@@ -1,15 +1,21 @@
 import { createBrowserRouter } from "react-router-dom";
 import App from "../App";
-import UserDashboardPage from "../pages/UserDashboardPage";
+import { HomePage, UserDashboardPage } from "../pages";
 
 const routes = createBrowserRouter([
   {
     path: "/",
     element: <App />,
-  },
-  {
-    path: "/users",
-    element: <UserDashboardPage />,
+    children: [
+      {
+        index: true,
+        element: <HomePage />,
+      },
+      {
+        path: "users",
+        element: <UserDashboardPage />,
+      },
+    ],
   },
 ]);
 
