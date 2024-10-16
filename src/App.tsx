@@ -1,26 +1,25 @@
-import React from 'react';
-import { Outlet, Link } from 'react-router-dom';
-import styles from './App.module.scss';
+import React from "react";
+import { Outlet, Link } from "react-router-dom";
+import "./App.scss";
+import Container from "./shared/components/Container";
 
 const App: React.FC = () => {
   return (
-    <div className={styles.app}>
-      <h1>React TypeScript Dashboard</h1>
-      <nav>
-        <ul>
-          <li>
-            <Link to="/">Home</Link>
-          </li>
-          <li>
-            <Link to="/users">View Users</Link>
-          </li>
-        </ul>
-      </nav>
-      <div className={styles.card}>
+    <Container>
+      <div className="wrapper">
+        <h1>Corsearch Assignment</h1>
+        <nav className="nav">
+          <ul>
+            <li className="btn">
+              <Link to="/users">Go to user page</Link>
+            </li>
+          </ul>
+        </nav>
+
         <Outlet />
       </div>
-    </div>
+    </Container>
   );
-}
+};
 
 export default App;
