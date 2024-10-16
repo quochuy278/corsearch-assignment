@@ -38,12 +38,24 @@ src/
 │       ├── api.ts
 │       ├── store.ts
 │       └── index.ts
+├── pages/
+│   ├── HomePage/
+│   │   ├── HomePage.tsx
+│   │   ├── HomePage.module.scss
+│   │   └── index.ts
+│   ├── UserDashboardPage/
+│   │   ├── UserDashboardPage.tsx
+│   │   ├── UserDashboardPage.module.scss
+│   │   └── index.ts
+│   └── index.ts
 ├── shared/
 │   ├── components/
 │   ├── hooks/
 │   ├── styles/
 │   │   └── variables.scss
 │   └── utils/
+├── routes.tsx
+├── AppRouter.tsx
 └── App.tsx
 ```
 

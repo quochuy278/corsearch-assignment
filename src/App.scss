@@ -1,0 +1,23 @@
+.wrapper {
+  padding: 2rem;
+  width: fit-content;
+}
+
+.nav {
+  margin-top: 5rem;
+}
+
+.btn {
+  padding: 0.5rem;
+
+  margin-bottom: 1rem;
+  background-color: var(--color-primary);
+  border-radius: 4rem;
+
+  a {
+    display: grid;
+    place-items: center;
+    width: 100%;
+    color: var(--color-surface);
+  }
+}

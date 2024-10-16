@@ -1,0 +1,16 @@
+.container {
+  width: 100vw;
+  height: 100vh;
+  max-width: 100%;
+  margin: 0;
+  padding: 20px;
+  box-sizing: border-box;
+  display: grid;
+  place-items: center;
+  overflow-x: hidden;
+}
+
+.container-content {
+  width: 100%;
+  max-width: 1200px;
+}
