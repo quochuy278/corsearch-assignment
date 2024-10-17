@@ -7,6 +7,14 @@ interface UserListProps {
 }
 
 export const UserList: React.FC<UserListProps> = ({ users }) => {
+  if (!users || users.length === 0) {
+    return (
+      <div className="wrapper">
+        <p className="no-data-message">No users found. Try adjusting your filters.</p>
+      </div>
+    );
+  }
+
   return (
     <div className="wrapper">
       <ul className="user-list">
