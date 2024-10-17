@@ -1,0 +1,28 @@
+.error-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  width: 100vw;
+  background-color: #f3f4f6;
+  font-family: Arial, sans-serif;
+
+  &__title {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+    color: #1f2937;
+  }
+
+  &__message {
+    font-size: 1.25rem;
+    margin-bottom: 1rem;
+    color: #4b5563;
+  }
+
+  &__details {
+    font-style: italic;
+    color: #6b7280;
+  }
+}
