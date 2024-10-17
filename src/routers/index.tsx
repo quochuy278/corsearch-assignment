@@ -1,11 +1,18 @@
 import { createBrowserRouter } from "react-router-dom";
 import App from "../App";
 import { HomePage, UserDashboardPage } from "../pages";
+import ErrorPage from "../pages/ErrorPage";
+import ErrorBoundary from "../shared/components/ErrorBoundary";
 
 const routes = createBrowserRouter([
   {
     path: "/",
-    element: <App />,
+    element: (
+      <ErrorBoundary>
+        <App />
+      </ErrorBoundary>
+    ),
+    errorElement: <ErrorPage />,
     children: [
       {
         index: true,
@@ -16,6 +23,10 @@ const routes = createBrowserRouter([
         element: <UserDashboardPage />,
       },
     ],
+  },
+  {
+    path: "*",
+    element: <ErrorPage />,
   },
 ]);
 

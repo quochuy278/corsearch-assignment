@@ -1,7 +1,7 @@
 import React, { useState, useMemo, useEffect } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
 import "./styles.scss";
-import { Container } from "../../shared/components";
+import { Container, LoadingIndicator } from "../../shared/components";
 import { useUser } from "../../features/userDashboard/hooks/useUser";
 import { User } from "../../features/userDashboard/type";
 import { FilterBar, UserList } from "../../features/userDashboard/components";
@@ -56,7 +56,7 @@ const UserDashboardPage: React.FC = () => {
 
   const handleNameFilterChange = (value: string) => {
     setNameFilter(value);
-    setActiveFilters(prev => {
+    setActiveFilters((prev) => {
       const newSet = new Set(prev);
       if (value) {
         newSet.add("name");
@@ -69,12 +69,12 @@ const UserDashboardPage: React.FC = () => {
 
   const handleSortFieldChange = (value: keyof User) => {
     setSortField(value);
-    setActiveFilters(prev => new Set(prev).add("sortField"));
+    setActiveFilters((prev) => new Set(prev).add("sortField"));
   };
 
   const handleSortOrderChange = (value: "asc" | "desc") => {
     setSortOrder(value);
-    setActiveFilters(prev => new Set(prev).add("sortOrder"));
+    setActiveFilters((prev) => new Set(prev).add("sortOrder"));
   };
 
   const filteredAndSortedUsers = useMemo(() => {
@@ -91,9 +91,6 @@ const UserDashboardPage: React.FC = () => {
       });
   }, [users, nameFilter, sortField, sortOrder]);
 
-  if (isLoading) return <div>Loading...</div>;
-  if (isError) return <div>Error: {error?.message}</div>;
-
   return (
     <Container>
       <div className="wrapper">
@@ -106,7 +103,11 @@ const UserDashboardPage: React.FC = () => {
           sortOrder={sortOrder}
           setSortOrder={handleSortOrderChange}
         />
-        <UserList users={filteredAndSortedUsers} />
+        {isLoading && <LoadingIndicator />}
+        {isError && (
+          <div className="error-message">Error: {error?.message}</div>
+        )}
+        {!isLoading && !isError && <UserList users={filteredAndSortedUsers} />}
       </div>
     </Container>
   );

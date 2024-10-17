@@ -15,5 +15,7 @@
 
 import Container from "./Container";
 import Header from "./Header";
+import ErrorBoundary from "./ErrorBoundary";
+import LoadingIndicator from "./LoadingIndicator";
 
-export { Header, Container };
+export { Header, Container, ErrorBoundary, LoadingIndicator };
